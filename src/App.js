@@ -1,18 +1,31 @@
 import React from 'react';
-import Navbar from './Navbar';
-import Carousel from './Carousel';
-import Footer from './Footer';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from './components/Navbar';
+import Carousel from './components/Carousel';
+import Footer from './components/Footer';
+// import Dashboard from './components/Dashboard';
+import Dashboard2 from './components/Dashboard2';
 
 function App() {
   return (
     <div className="App">
 
 
-
-      {/* this is our nav bar */}
+      <BrowserRouter>
+      
       <Navbar />
-      <Carousel />
-      <Footer/>
+      
+        <Routes>
+          <Route path="/x" element={<Carousel/>} />
+          <Route path="/y" element={<Footer/>} />
+        </Routes>
+
+        
+        {/* <Footer /> */}
+        
+        </BrowserRouter>
+
+
 
 
     </div>
